@@ -1,9 +1,17 @@
 let container = document.querySelector("#container");
 
-for (let i = 0; i<256; i++){
-    let newPixel = document.createElement("div");
-    newPixel.style.width = "60px";
-    newPixel.style.height = "60px";
-    newPixel.style.backgroundColor = "red";
-    container.appendChild(newPixel);
+function generateGrid (sideLength){
+    let pixelQuantity = sideLength * sideLength;
+    let pixelSize = (960 / sideLength).toString() + "px";
+
+    for (let i = 0; i<pixelQuantity; i++){
+        let newPixel = document.createElement("div");
+        newPixel.style.width = pixelSize;
+        newPixel.style.height = pixelSize;
+        newPixel.style.backgroundColor = "red";
+        container.appendChild(newPixel);
+    }
+
 }
+
+generateGrid(16);
