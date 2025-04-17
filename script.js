@@ -8,7 +8,6 @@ function generateGrid (sideLength){
         let newPixel = document.createElement("div");
         newPixel.style.width = pixelSize;
         newPixel.style.height = pixelSize;
-        newPixel.style.backgroundColor = "red";
         container.appendChild(newPixel);
     }
 
