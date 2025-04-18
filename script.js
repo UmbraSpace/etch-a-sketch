@@ -20,7 +20,10 @@ function generateGrid (sideLength){
 }
 
 button.addEventListener("click", () => {
-    let gridSideLength = prompt("Side length of new grid?")
+    let gridSideLength;
+    do {
+        gridSideLength = prompt("Side length of new grid? (Must be 100 or less)");
+    } while (gridSideLength > 100);
     
     while(container.firstChild){
         container.removeChild(container.lastChild);
