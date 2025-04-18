@@ -1,8 +1,11 @@
 let container = document.querySelector("#container");
+let button = document.querySelector('button');
+const containerSize = 900;
+
 
 function generateGrid (sideLength){
     let pixelQuantity = sideLength * sideLength;
-    let pixelSize = (960 / sideLength).toString() + "px";
+    let pixelSize = (containerSize / sideLength).toString() + "px";
 
     for (let i = 0; i<pixelQuantity; i++){
         let newPixel = document.createElement("div");
@@ -15,5 +18,15 @@ function generateGrid (sideLength){
     }
 
 }
+
+button.addEventListener("click", () => {
+    let gridSideLength = prompt("Side length of new grid?")
+    
+    while(container.firstChild){
+        container.removeChild(container.lastChild);
+    }
+    
+    generateGrid(gridSideLength);
+})
 
 generateGrid(16);
